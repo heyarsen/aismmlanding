@@ -39,6 +39,35 @@ body {
   padding: 12px 0 32px;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.language-switcher label {
+  font-weight: 600;
+}
+
+.language-switcher select {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  color: var(--text);
+}
+
 .logo {
   font-weight: 700;
   font-size: 20px;
@@ -485,6 +514,15 @@ body {
 @media (max-width: 900px) {
   .nav-links {
     display: none;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
