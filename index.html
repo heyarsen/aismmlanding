@@ -731,9 +731,36 @@
         });
       };
 
-      const storedLanguage = localStorage.getItem("ai-smm-language") || "en";
-      languageSelect.value = storedLanguage;
-      applyTranslations(storedLanguage);
+      const resolveBrowserLanguage = () => {
+        const supported = Object.keys(translations);
+        const preferredLanguages = navigator.languages && navigator.languages.length
+          ? navigator.languages
+          : [navigator.language || "en"];
+
+        const normalizedPreferences = preferredLanguages
+          .filter(Boolean)
+          .map((lang) => lang.toLowerCase());
+
+        for (const lang of normalizedPreferences) {
+          const baseLang = lang.split("-")[0];
+          if (supported.includes(lang)) {
+            return lang;
+          }
+          if (supported.includes(baseLang)) {
+            return baseLang;
+          }
+        }
+
+        return "en";
+      };
+
+      const storedLanguage = localStorage.getItem("ai-smm-language");
+      const initialLanguage = storedLanguage || resolveBrowserLanguage();
+      languageSelect.value = initialLanguage;
+      applyTranslations(initialLanguage);
+      if (!storedLanguage) {
+        localStorage.setItem("ai-smm-language", initialLanguage);
+      }
 
       languageSelect.addEventListener("change", (event) => {
         const selectedLanguage = event.target.value;
