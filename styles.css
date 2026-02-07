@@ -305,6 +305,39 @@ body {
   margin-bottom: 64px;
 }
 
+.video-examples {
+  margin-bottom: 64px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  background: var(--card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 12px;
+  text-align: center;
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: none;
+  border-radius: 18px;
+}
+
+.video-card p {
+  color: var(--muted);
+  font-weight: 500;
+}
+
 .step-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
