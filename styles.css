@@ -728,7 +728,8 @@ body {
   }
 
   .video-card {
-    flex-basis: 82vw;
+    flex-basis: 72vw;
+    max-width: 240px;
     aspect-ratio: 9 / 16;
   }
 
