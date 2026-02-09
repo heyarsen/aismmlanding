@@ -709,6 +709,15 @@ body {
     grid-template-columns: repeat(3, minmax(240px, 1fr));
   }
 
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    max-width: 1100px;
+  }
+
+  .pricing-card {
+    padding: 32px;
+  }
+
 }
 
 @media (min-width: 721px) {
