@@ -990,8 +990,49 @@
           });
         };
 
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragStartScroll = 0;
+
+        const startDrag = (event) => {
+          if (event.button !== undefined && event.button !== 0) {
+            return;
+          }
+          if (event.target && event.target.closest && event.target.closest("iframe")) {
+            return;
+          }
+          isDragging = true;
+          dragStartX = event.pageX;
+          dragStartScroll = videoGrid.scrollLeft;
+          videoGrid.classList.add("is-dragging");
+          if (videoGrid.setPointerCapture) {
+            videoGrid.setPointerCapture(event.pointerId);
+          }
+        };
+
+        const onDrag = (event) => {
+          if (!isDragging) {
+            return;
+          }
+          const deltaX = event.pageX - dragStartX;
+          videoGrid.scrollLeft = dragStartScroll - deltaX;
+        };
+
+        const stopDrag = () => {
+          if (!isDragging) {
+            return;
+          }
+          isDragging = false;
+          videoGrid.classList.remove("is-dragging");
+        };
+
         prevButton.addEventListener("click", () => scrollByAmount(-1));
         nextButton.addEventListener("click", () => scrollByAmount(1));
+        videoGrid.addEventListener("pointerdown", startDrag);
+        videoGrid.addEventListener("pointermove", onDrag);
+        videoGrid.addEventListener("pointerup", stopDrag);
+        videoGrid.addEventListener("pointerleave", stopDrag);
+        videoGrid.addEventListener("pointercancel", stopDrag);
 
         videoGrid.addEventListener(
           "wheel",

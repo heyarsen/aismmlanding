@@ -322,6 +322,8 @@ body {
   overflow-x: auto;
   flex-wrap: nowrap;
   align-items: stretch;
+  cursor: grab;
+  scrollbar-gutter: stable;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 8px 4px 12px;
@@ -363,6 +365,12 @@ body {
 .video-grid::-webkit-scrollbar-thumb {
   background: rgba(148, 163, 184, 0.6);
   border-radius: 999px;
+}
+
+.video-grid.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  user-select: none;
 }
 
 .carousel-btn {
@@ -502,6 +510,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
+  align-items: stretch;
 }
 
 .pricing-card {
@@ -512,6 +521,9 @@ body {
   box-shadow: var(--shadow);
   display: grid;
   gap: 14px;
+  align-content: start;
+  justify-items: stretch;
+  grid-auto-rows: min-content;
 }
 
 .pricing-card h3 {
@@ -701,6 +713,14 @@ body {
 
   .check-grid {
     grid-template-columns: repeat(3, minmax(240px, 1fr));
+  }
+
+  .pricing-features {
+    gap: 12px;
+  }
+
+  .pricing-feature {
+    padding: 12px 16px;
   }
 }
 
