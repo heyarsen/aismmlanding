@@ -157,8 +157,15 @@
             <p data-i18n="videos_subtitle">Generate videos in 83 languages.</p>
           </div>
           <div class="video-carousel" role="region" aria-label="Video examples carousel">
-            <button class="carousel-btn prev" type="button" aria-label="Scroll videos left">‹</button>
-            <div class="video-grid">
+            <button
+              class="carousel-btn prev"
+              type="button"
+              aria-label="Scroll videos left"
+              aria-controls="video-carousel-track"
+            >
+              ‹
+            </button>
+            <div class="video-grid" id="video-carousel-track">
               <article class="video-card">
                 <iframe
                   src="https://www.youtube.com/embed/P8ls0pG-L_s"
@@ -200,7 +207,14 @@
                 ></iframe>
               </article>
             </div>
-            <button class="carousel-btn next" type="button" aria-label="Scroll videos right">›</button>
+            <button
+              class="carousel-btn next"
+              type="button"
+              aria-label="Scroll videos right"
+              aria-controls="video-carousel-track"
+            >
+              ›
+            </button>
           </div>
         </section>
 

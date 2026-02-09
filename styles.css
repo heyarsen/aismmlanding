@@ -317,9 +317,11 @@ body {
 
 .video-grid {
   display: flex;
+  flex-direction: row;
   gap: 20px;
   overflow-x: auto;
   flex-wrap: nowrap;
+  align-items: stretch;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 8px 4px 12px;
