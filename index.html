@@ -156,47 +156,67 @@
             <h2 id="videos-title" data-i18n="videos_title">Video examples</h2>
             <p data-i18n="videos_subtitle">Generate videos in 83 languages.</p>
           </div>
-          <div class="video-grid">
-            <article class="video-card">
-              <iframe
-                src="https://www.youtube.com/embed/P8ls0pG-L_s"
-                title="AI-SMM video example 1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </article>
-            <article class="video-card">
-              <iframe
-                src="https://www.youtube.com/embed/U7J6d5a5ZJU"
-                title="AI-SMM video example 2"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </article>
-            <article class="video-card">
-              <iframe
-                src="https://www.youtube.com/embed/UQHl11XPkE4"
-                title="AI-SMM video example 3"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </article>
-            <article class="video-card">
-              <iframe
-                src="https://www.youtube.com/embed/IkABM4iPGjA"
-                title="AI-SMM video example 4"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </article>
-            <article class="video-card">
-              <iframe
-                src="https://www.youtube.com/embed/G1uPlJemkao"
-                title="AI-SMM video example 5"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </article>
+          <div class="video-carousel" data-carousel>
+            <button
+              class="carousel-btn prev"
+              type="button"
+              aria-label="Previous videos"
+              data-i18n-aria="videos_prev_aria"
+              data-carousel-prev
+            >
+              ‹
+            </button>
+            <div class="carousel-track" data-carousel-track>
+              <article class="video-card">
+                <iframe
+                  src="https://www.youtube.com/embed/P8ls0pG-L_s"
+                  title="AI-SMM video example 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </article>
+              <article class="video-card">
+                <iframe
+                  src="https://www.youtube.com/embed/U7J6d5a5ZJU"
+                  title="AI-SMM video example 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </article>
+              <article class="video-card">
+                <iframe
+                  src="https://www.youtube.com/embed/UQHl11XPkE4"
+                  title="AI-SMM video example 3"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </article>
+              <article class="video-card">
+                <iframe
+                  src="https://www.youtube.com/embed/IkABM4iPGjA"
+                  title="AI-SMM video example 4"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </article>
+              <article class="video-card">
+                <iframe
+                  src="https://www.youtube.com/embed/G1uPlJemkao"
+                  title="AI-SMM video example 5"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </article>
+            </div>
+            <button
+              class="carousel-btn next"
+              type="button"
+              aria-label="Next videos"
+              data-i18n-aria="videos_next_aria"
+              data-carousel-next
+            >
+              ›
+            </button>
           </div>
         </section>
 
@@ -429,6 +449,8 @@
           step_three_body: "AI writes, schedules, generates videos, and posts automatically.",
           videos_title: "Video examples",
           videos_subtitle: "Generate videos in 83 languages.",
+          videos_prev_aria: "Previous videos",
+          videos_next_aria: "Next videos",
           videos_caption_one: "Example video 1",
           videos_caption_two: "Example video 2",
           videos_caption_three: "Example video 3",
@@ -529,6 +551,8 @@
           step_three_body: "ИИ пишет, планирует, генерирует видео и публикует автоматически.",
           videos_title: "Примеры видео",
           videos_subtitle: "Создавайте видео на 83 языках.",
+          videos_prev_aria: "Предыдущие видео",
+          videos_next_aria: "Следующие видео",
           videos_caption_one: "Пример видео 1",
           videos_caption_two: "Пример видео 2",
           videos_caption_three: "Пример видео 3",
@@ -629,6 +653,8 @@
           step_three_body: "ШІ пише, планує, генерує відео та публікує автоматично.",
           videos_title: "Приклади відео",
           videos_subtitle: "Створюйте відео 83 мовами.",
+          videos_prev_aria: "Попередні відео",
+          videos_next_aria: "Наступні відео",
           videos_caption_one: "Приклад відео 1",
           videos_caption_two: "Приклад відео 2",
           videos_caption_three: "Приклад відео 3",
@@ -729,6 +755,8 @@
           step_three_body: "Die KI schreibt, plant, erstellt Videos und postet automatisch.",
           videos_title: "Videobeispiele",
           videos_subtitle: "Erstellen Sie Videos in 83 Sprachen.",
+          videos_prev_aria: "Vorherige Videos",
+          videos_next_aria: "Nächste Videos",
           videos_caption_one: "Videobeispiel 1",
           videos_caption_two: "Videobeispiel 2",
           videos_caption_three: "Videobeispiel 3",
@@ -829,6 +857,8 @@
           step_three_body: "La IA escribe, programa, genera videos y publica automáticamente.",
           videos_title: "Ejemplos de video",
           videos_subtitle: "Genera videos en 83 idiomas.",
+          videos_prev_aria: "Videos anteriores",
+          videos_next_aria: "Siguientes videos",
           videos_caption_one: "Video de ejemplo 1",
           videos_caption_two: "Video de ejemplo 2",
           videos_caption_three: "Video de ejemplo 3",
@@ -939,6 +969,49 @@
         const selectedLanguage = event.target.value;
         localStorage.setItem("ai-smm-language", selectedLanguage);
         applyTranslations(selectedLanguage);
+      });
+
+      const carousels = document.querySelectorAll("[data-carousel]");
+
+      carousels.forEach((carousel) => {
+        const track = carousel.querySelector("[data-carousel-track]");
+        const prevButton = carousel.querySelector("[data-carousel-prev]");
+        const nextButton = carousel.querySelector("[data-carousel-next]");
+
+        if (!track || !prevButton || !nextButton) {
+          return;
+        }
+
+        const getScrollAmount = () => {
+          const card = track.querySelector(".video-card");
+          if (!card) {
+            return 0;
+          }
+          const styles = getComputedStyle(track);
+          const gap = parseFloat(styles.columnGap || styles.gap || "0");
+          return card.getBoundingClientRect().width + gap;
+        };
+
+        const updateButtons = () => {
+          const maxScroll = track.scrollWidth - track.clientWidth - 1;
+          prevButton.disabled = track.scrollLeft <= 1;
+          nextButton.disabled = track.scrollLeft >= maxScroll;
+        };
+
+        prevButton.addEventListener("click", () => {
+          track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+        });
+
+        nextButton.addEventListener("click", () => {
+          track.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+        });
+
+        track.addEventListener("scroll", () => {
+          window.requestAnimationFrame(updateButtons);
+        });
+
+        window.addEventListener("resize", updateButtons);
+        updateButtons();
       });
 
     </script>
