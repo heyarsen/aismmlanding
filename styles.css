@@ -381,6 +381,7 @@ body {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
+  z-index: 2;
 }
 
 .carousel-btn:hover {
@@ -488,7 +489,7 @@ body {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
@@ -548,7 +549,7 @@ body {
   border-radius: 16px;
   padding: 10px 14px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
   font-weight: 500;
@@ -565,6 +566,7 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .price-amount {
@@ -687,6 +689,10 @@ body {
 
   .check-grid {
     grid-template-columns: repeat(3, minmax(240px, 1fr));
+  }
+
+  .pricing-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
