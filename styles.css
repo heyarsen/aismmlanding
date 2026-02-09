@@ -340,13 +340,13 @@ body {
 }
 
 .video-card {
-  flex: 0 0 min(360px, 80vw);
+  flex: 0 0 min(280px, 70vw);
   background: var(--card);
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
   scroll-snap-align: center;
 }
 
