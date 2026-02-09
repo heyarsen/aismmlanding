@@ -324,6 +324,7 @@ body {
   -webkit-overflow-scrolling: touch;
   padding: 8px 4px 12px;
   scroll-behavior: smooth;
+  scroll-padding: 36px;
   scrollbar-width: none;
 }
 
@@ -336,7 +337,7 @@ body {
   display: grid;
   gap: 12px;
   text-align: center;
-  flex: 0 0 280px;
+  flex: 0 0 clamp(240px, 28vw, 320px);
   scroll-snap-align: center;
 }
 
