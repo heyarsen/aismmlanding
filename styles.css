@@ -311,19 +311,23 @@ body {
 
 .video-carousel {
   position: relative;
-  padding: 0;
-  overflow: visible;
+  padding: 0 56px;
+  overflow: hidden;
 }
 
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
   gap: 20px;
-  overflow: visible;
-  flex-wrap: wrap;
+  overflow-x: auto;
   align-items: stretch;
-  cursor: default;
-  padding: 8px 0 12px;
+  cursor: grab;
+  padding: 8px 0 20px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 56px;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.6) transparent;
 }
 
 .video-card {
@@ -335,7 +339,8 @@ body {
   display: grid;
   gap: 12px;
   text-align: center;
-  flex: 0 0 auto;
+  flex: 0 0 clamp(240px, 32vw, 360px);
+  scroll-snap-align: start;
 }
 
 .video-card iframe {
@@ -400,11 +405,11 @@ body {
 }
 
 .carousel-btn.prev {
-  left: 0;
+  left: 8px;
 }
 
 .carousel-btn.next {
-  right: 0;
+  right: 8px;
 }
 
 .step-grid {
@@ -720,12 +725,6 @@ body {
 
 }
 
-@media (min-width: 721px) {
-  .carousel-btn {
-    display: none;
-  }
-}
-
 @media (max-width: 720px) {
   .page {
     padding: 24px 18px 48px;
@@ -750,25 +749,14 @@ body {
   }
 
   .video-grid {
-    display: flex;
-    flex-direction: row;
     gap: 16px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    cursor: grab;
-    scrollbar-gutter: stable;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 8px;
     padding-right: 12px;
-    scroll-behavior: smooth;
     scroll-padding: 36px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(148, 163, 184, 0.6) transparent;
   }
 
   .video-card {
     min-width: 78%;
-    scroll-snap-align: start;
   }
 }

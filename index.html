@@ -960,8 +960,7 @@
       });
 
       const carousel = document.querySelector(".video-carousel");
-      const carouselEnabled = window.matchMedia("(max-width: 720px)");
-      if (carousel && carouselEnabled.matches) {
+      if (carousel) {
         const videoGrid = carousel.querySelector(".video-grid");
         const prevButton = carousel.querySelector(".carousel-btn.prev");
         const nextButton = carousel.querySelector(".carousel-btn.next");
