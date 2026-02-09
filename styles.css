@@ -327,7 +327,8 @@ body {
   padding: 8px 4px 12px;
   scroll-behavior: smooth;
   scroll-padding: 36px;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.6) transparent;
 }
 
 .video-card {
@@ -356,7 +357,7 @@ body {
 }
 
 .video-grid::-webkit-scrollbar {
-  height: 0;
+  height: 6px;
 }
 
 .video-grid::-webkit-scrollbar-thumb {
@@ -386,6 +387,16 @@ body {
 
 .carousel-btn:hover {
   background: white;
+}
+
+.carousel-btn.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.carousel-btn:disabled {
+  pointer-events: none;
 }
 
 .carousel-btn.prev {
@@ -540,6 +551,7 @@ body {
   margin: 0;
   color: var(--muted);
   line-height: 1.5;
+  grid-template-columns: 1fr;
 }
 
 .pricing-feature {
@@ -689,10 +701,6 @@ body {
 
   .check-grid {
     grid-template-columns: repeat(3, minmax(240px, 1fr));
-  }
-
-  .pricing-features {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

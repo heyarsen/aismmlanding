@@ -964,6 +964,15 @@
         const videoGrid = carousel.querySelector(".video-grid");
         const prevButton = carousel.querySelector(".carousel-btn.prev");
         const nextButton = carousel.querySelector(".carousel-btn.next");
+        const updateButtons = () => {
+          const maxScrollLeft = videoGrid.scrollWidth - videoGrid.clientWidth;
+          const atStart = videoGrid.scrollLeft <= 1;
+          const atEnd = videoGrid.scrollLeft >= maxScrollLeft - 1;
+          prevButton.disabled = atStart;
+          nextButton.disabled = atEnd;
+          prevButton.classList.toggle("is-disabled", atStart);
+          nextButton.classList.toggle("is-disabled", atEnd);
+        };
 
         const getScrollAmount = () => {
           const firstCard = videoGrid.querySelector(".video-card");
@@ -983,6 +992,35 @@
 
         prevButton.addEventListener("click", () => scrollByAmount(-1));
         nextButton.addEventListener("click", () => scrollByAmount(1));
+
+        videoGrid.addEventListener(
+          "wheel",
+          (event) => {
+            if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+              return;
+            }
+            const maxScrollLeft = videoGrid.scrollWidth - videoGrid.clientWidth;
+            const canScrollLeft = videoGrid.scrollLeft > 0;
+            const canScrollRight = videoGrid.scrollLeft < maxScrollLeft;
+            const scrollingRight = event.deltaY > 0;
+            const scrollingLeft = event.deltaY < 0;
+
+            if ((scrollingRight && !canScrollRight) || (scrollingLeft && !canScrollLeft)) {
+              return;
+            }
+
+            event.preventDefault();
+            videoGrid.scrollBy({
+              left: event.deltaY,
+              behavior: "smooth"
+            });
+          },
+          { passive: false }
+        );
+
+        videoGrid.addEventListener("scroll", updateButtons);
+        window.addEventListener("resize", updateButtons);
+        updateButtons();
       }
     </script>
   </body>
