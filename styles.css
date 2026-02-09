@@ -709,17 +709,6 @@ body {
     grid-template-columns: repeat(3, minmax(240px, 1fr));
   }
 
-  .pricing-features {
-    gap: 12px;
-  }
-
-  .pricing-feature {
-    padding: 12px 18px;
-    border-radius: 999px;
-    background: rgba(248, 250, 252, 0.95);
-    border-color: rgba(148, 163, 184, 0.55);
-    box-shadow: 0 12px 22px rgba(15, 23, 42, 0.12);
-  }
 }
 
 @media (min-width: 721px) {
