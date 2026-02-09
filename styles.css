@@ -726,7 +726,7 @@ body {
 
   .video-card {
     flex-basis: 82vw;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
   }
 
   .carousel-btn {
