@@ -309,25 +309,12 @@ body {
   margin-bottom: 64px;
 }
 
-.video-carousel {
-  position: relative;
-  padding: 0 56px;
-  overflow: hidden;
-}
-
 .video-grid {
-  display: flex;
+  display: grid;
   gap: 20px;
-  overflow-x: auto;
   align-items: stretch;
-  cursor: grab;
   padding: 8px 0 20px;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 56px;
-  scroll-behavior: smooth;
-  scrollbar-gutter: stable;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(148, 163, 184, 0.6) transparent;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .video-card {
@@ -339,8 +326,6 @@ body {
   display: grid;
   gap: 12px;
   text-align: center;
-  flex: 0 0 clamp(240px, 32vw, 360px);
-  scroll-snap-align: start;
 }
 
 .video-card iframe {
@@ -353,63 +338,6 @@ body {
 .video-card p {
   color: var(--muted);
   font-weight: 500;
-}
-
-.video-grid::-webkit-scrollbar {
-  height: 6px;
-}
-
-.video-grid::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.6);
-  border-radius: 999px;
-}
-
-.video-grid.is-dragging {
-  cursor: grabbing;
-  scroll-behavior: auto;
-  user-select: none;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--text);
-  font-size: 22px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
-  z-index: 2;
-}
-
-.carousel-btn:hover {
-  background: white;
-}
-
-.carousel-btn.is-disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-.carousel-btn:disabled {
-  pointer-events: none;
-}
-
-.carousel-btn.prev {
-  left: 8px;
-}
-
-.carousel-btn.next {
-  right: 8px;
 }
 
 .step-grid {
@@ -739,24 +667,9 @@ body {
     align-items: flex-start;
   }
 
-  .video-carousel {
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .carousel-btn {
-    display: none;
-  }
-
   .video-grid {
     gap: 16px;
-    -webkit-overflow-scrolling: touch;
     padding-bottom: 8px;
-    padding-right: 12px;
-    scroll-padding: 36px;
-  }
-
-  .video-card {
-    min-width: 78%;
+    grid-template-columns: 1fr;
   }
 }
