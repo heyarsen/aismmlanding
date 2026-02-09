@@ -712,3 +712,25 @@ body {
   }
 
 }
+
+@media (max-width: 600px) {
+  .video-carousel {
+    gap: 8px;
+  }
+
+  .carousel-track {
+    gap: 12px;
+    padding: 8px;
+    scroll-padding: 8px;
+  }
+
+  .video-card {
+    flex-basis: 82vw;
+  }
+
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
