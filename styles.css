@@ -476,6 +476,19 @@ body {
   gap: 8px;
 }
 
+.pricing-features {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.pricing-features li {
+  margin: 0;
+}
+
 .price-amount {
   font-size: 24px;
   font-weight: 700;
