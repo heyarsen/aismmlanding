@@ -318,6 +318,7 @@ body {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  flex-wrap: nowrap;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 8px 4px 12px;
@@ -530,25 +531,24 @@ body {
   display: grid;
   gap: 10px;
   margin: 0;
-  padding: 0;
   color: var(--muted);
   line-height: 1.5;
-  list-style: none;
 }
 
-.pricing-features li {
+.pricing-feature {
   margin: 0;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 8px 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(219, 234, 254, 0.6));
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 16px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+  font-weight: 500;
 }
 
-.pricing-features li::before {
+.pricing-feature::before {
   content: "✓";
   width: 24px;
   height: 24px;
