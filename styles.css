@@ -312,6 +312,7 @@ body {
 .video-carousel {
   position: relative;
   padding: 0 36px;
+  overflow: hidden;
 }
 
 .video-grid {
@@ -322,6 +323,8 @@ body {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 8px 4px 12px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .video-card {
@@ -350,7 +353,7 @@ body {
 }
 
 .video-grid::-webkit-scrollbar {
-  height: 6px;
+  height: 0;
 }
 
 .video-grid::-webkit-scrollbar-thumb {
